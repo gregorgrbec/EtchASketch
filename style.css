@@ -1,0 +1,52 @@
+* {
+    /* border: 1px solid black; */
+}
+
+body {
+    background-color: bisque;
+}
+
+.header {
+    /* height: 80px; */
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    height: 60px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main div{
+    justify-content: center;
+    text-align: center;
+}
+
+.main-left, .main-right {
+    width: 300px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    width:500px;
+    height: 500px;
+}
+
+.field {
+    background-color: white;
+
+}
+
+.slider-value {
+    margin-top: 8px;
+}
+
+
+
