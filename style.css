@@ -6,10 +6,6 @@ body {
     background-color: bisque;
 }
 
-/* .header {
-    height: 80px;
-} */
-
 h1 {
     font-family: Arial Black, Gadget, sans-serif;
     font-size: 50px;
@@ -86,6 +82,49 @@ button{
 @keyframes animatedBackground_a {
     0% { background-position: 0 0 }
     100% { background-position: -500px 0 }
+}
+
+@media (max-width: 940px) {
+    
+    .main-left, .main-right {
+        width: 100%;
+    }
+
+    button{
+        width:150px;
+
+    }
+
+    .slidercontainer {
+        margin-top: 20px;
+    }
+
+}
+
+@media (max-width: 520px) {
+    
+    .grid {
+        width: 360px;
+        height: 360px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+}
+
+@media (max-width: 405px) {
+    
+    .grid {
+        width: 300px;
+        height: 300px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
 }
 
 
