@@ -46,14 +46,13 @@ sld.oninput = function () {
     grd.appendChild(f);
   }
 
-  fields = document.querySelectorAll(".field");
-  fields.forEach((fld) => {
-    fld.addEventListener("mouseover", () => {
-      fld.style.backgroundColor = "black";
-    });
+  // Finding which mode is currently active
+  btns = document.querySelectorAll("button");
+  btns.forEach((btn) => {
+    if (btn.style.backgroundColor == "lightgray") {
+      btn.click();
+    }
   });
-
-  //   document.querySelector(".grid").style.gridTemplateColumns = repeat(16, 1fr);
 };
 
 // Random color function
