@@ -12,7 +12,7 @@ for (let i = 0; i < 16 * 16; i++) {
 fields = document.querySelectorAll(".field");
 fields.forEach((fld) => {
   fld.addEventListener("mouseover", () => {
-    fld.style.backgroundColor = "gray";
+    fld.style.backgroundColor = "black";
   });
 });
 
@@ -40,7 +40,6 @@ sld.oninput = function () {
 
   //   grd = document.querySelector(".grid");
   grd.style = `grid-template-columns: repeat(${x}, 1fr)`;
-  console.log(grd);
 
   for (let i = 0; i < x * x; i++) {
     f = field.cloneNode(true);
@@ -50,9 +49,82 @@ sld.oninput = function () {
   fields = document.querySelectorAll(".field");
   fields.forEach((fld) => {
     fld.addEventListener("mouseover", () => {
-      fld.style.backgroundColor = "gray";
+      fld.style.backgroundColor = "black";
     });
   });
 
   //   document.querySelector(".grid").style.gridTemplateColumns = repeat(16, 1fr);
+};
+
+// Random color function
+function getRandomColor() {
+  var letters = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+// Rainbow button
+rbtn = document.querySelector(".rainbow-btn");
+rbtn.addEventListener("click", () => {
+  toggle(rbtn);
+  fields = document.querySelectorAll(".field");
+  fields.forEach((fld) => {
+    fld.addEventListener("mouseover", () => {
+      fld.style.backgroundColor = getRandomColor();
+    });
+  });
+});
+
+// Normal button
+nbtn = document.querySelector(".nrm-btn");
+nbtn.addEventListener("click", () => {
+  toggle(nbtn);
+  fields = document.querySelectorAll(".field");
+  fields.forEach((fld) => {
+    fld.addEventListener("mouseover", () => {
+      fld.style.backgroundColor = "black";
+    });
+  });
+});
+
+// Eraser button
+ebtn = document.querySelector(".eraser-btn");
+ebtn.addEventListener("click", () => {
+  toggle(ebtn);
+  fields = document.querySelectorAll(".field");
+  fields.forEach((fld) => {
+    fld.addEventListener("mouseover", () => {
+      fld.style.backgroundColor = "white";
+    });
+  });
+});
+
+// Clear button
+cbtn = document.querySelector(".clear-btn");
+cbtn.addEventListener("click", () => {
+  toggle(cbtn);
+  fields = document.querySelectorAll(".field");
+  fields.forEach((fld) => {
+    fld.style.backgroundColor = "white";
+  });
+});
+
+// Toggle buttons
+toggle = function (btn) {
+  if (btn === document.querySelector(".eraser-btn")) {
+    document.querySelector(".eraser-btn").style.backgroundColor = "lightgray";
+    document.querySelector(".nrm-btn").style.backgroundColor = "white";
+    document.querySelector(".rainbow-btn").style.backgroundColor = "white";
+  } else if (btn === document.querySelector(".nrm-btn")) {
+    document.querySelector(".eraser-btn").style.backgroundColor = "white";
+    document.querySelector(".nrm-btn").style.backgroundColor = "lightgray";
+    document.querySelector(".rainbow-btn").style.backgroundColor = "white";
+  } else if (btn === document.querySelector(".rainbow-btn")) {
+    document.querySelector(".eraser-btn").style.backgroundColor = "white";
+    document.querySelector(".nrm-btn").style.backgroundColor = "white";
+    document.querySelector(".rainbow-btn").style.backgroundColor = "lightgray";
+  }
 };
